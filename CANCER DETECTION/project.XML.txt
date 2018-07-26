@@ -1,0 +1,48 @@
+
+
+n=input(prompt);
+switch (n)
+    case 1
+            [x,t] = iris_dataset;
+            net = patternnet(10);
+            net = train(net,x,t);
+            view(net)
+                y = net(x);
+                perf = perform(net,t,y);
+                break;
+    case 2	
+        x = iris_dataset;
+        net = selforgmap([8 8]);
+        net = train(net,x);
+            view(net)
+            y = net(x);
+            classes = vec2ind(y);
+            break;
+    case 3
+        [x,t] = iris_dataset;
+        net = lvqnet(10);
+        net = train(net,x,t);
+            view(net)
+            y = net(x);
+            perf = perform(net,y,t)
+            classes = vec2ind(y);
+            break;
+    case 4
+        load iris_dataset % load data
+         net = feedforwardnet(2);
+        net = train(net,x,t);
+            view(net)
+            y = net(x);
+            perf = perform(net,y,t)
+ 
+       break;
+   
+    case 5
+        load iris_dataset
+     net = newrb(x,t);
+      x = 2;0
+      y = sim(net,x)
+      break;
+ 
+ end
+
